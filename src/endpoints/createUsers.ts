@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { connection } from "../data/connection";
+import { IdGenerated } from "../services/generateId";
 import { User } from "../types";
 
 const createUsers = async (req: Request, res: Response) => {
@@ -10,8 +11,10 @@ const createUsers = async (req: Request, res: Response) => {
             throw new Error("Preencha todos os campos.");
         }
 
+        const id: string = new IdGenerated().generateId();
+
         const user: User = {
-            id: Date.now().toString(),
+            id,
             name,
             email,
             password,
