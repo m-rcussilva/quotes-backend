@@ -5,9 +5,9 @@ import { User } from "../types";
 
 const createUsers = async (req: Request, res: Response) => {
     try {
-        const { name, email, password } = req.body;
+        const { email, password } = req.body;
 
-        if (!name || !email || !password) {
+        if (!email || !password) {
             throw new Error("Preencha todos os campos.");
         }
 
@@ -15,7 +15,6 @@ const createUsers = async (req: Request, res: Response) => {
 
         const user: User = {
             id,
-            name,
             email,
             password,
         };
