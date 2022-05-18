@@ -1,3 +1,3 @@
 # quotes-backend
 
-[https://github.com/m-rcussilva/quotes](quotes-frontend)
+[quotes-frontend](https://github.com/m-rcussilva/quotes)
